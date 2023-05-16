@@ -1,0 +1,88 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: 20px auto; /* Add some margin at the top and bottom */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #ff69b4;
+    margin-top: 0;
+  }
+  
+  form {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .column {
+    flex-basis: 48%;
+    margin: 5px 10px;
+  }
+  
+  .col {
+    flex-basis: 100%;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 10px; /* Increase the margin for better spacing */
+  }
+  
+  input[type="text"],
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box; /* Include padding in the width calculation */
+  }
+  
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 30px;
+    background: url('https://cdn.iconscout.com/icon/free/png-256/drop-down-1767869-1507115.png') no-repeat right center/20px;
+    background-color: #f8f8f8; /* Add a background color for consistency */
+    cursor: pointer;
+  }
+  
+  button[type="submit"] {
+    background-color: #ff69b4;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 400px;
+    height: 50px;
+    font-size: larger;
+    transition: background-color 0.3s ease; /* Add a smooth transition */
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #ff4785;
+  }
+  
+  .error {
+    color: red;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  

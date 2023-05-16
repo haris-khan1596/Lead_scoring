@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ML Model Input Form</title>
+    <style>body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f8f8;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .container {
+        max-width: 1000px;
+        margin: 20px auto; /* Add some margin at the top and bottom */
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      h1 {
+        text-align: center;
+        color: #ff69b4;
+        margin-top: 0;
+      }
+      
+      form {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      
+      .column {
+        flex-basis: 48%;
+        margin: 5px 10px;
+      }
+      
+      .col {
+        flex-basis: 100%;
+        margin-top: 20px;
+        text-align: center;
+      }
+      
+      label {
+        display: block;
+        font-weight: bold;
+        color: #555;
+        margin-bottom: 10px; /* Increase the margin for better spacing */
+      }
+      
+      input[type="text"],
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        box-sizing: border-box; /* Include padding in the width calculation */
+      }
+      
+      select {
+        appearance: none;
+        -webkit-appearance: none;
+        padding-right: 30px;
+        background: url('https://cdn.iconscout.com/icon/free/png-256/drop-down-1767869-1507115.png') no-repeat right center/20px;
+        background-color: #f8f8f8; /* Add a background color for consistency */
+        cursor: pointer;
+      }
+      
+      button[type="submit"] {
+        background-color: #ff69b4;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 400px;
+        height: 50px;
+        font-size: larger;
+        transition: background-color 0.3s ease; /* Add a smooth transition */
+      }
+      
+      button[type="submit"]:hover {
+        background-color: #ff4785;
+      }
+      
+      .error {
+        color: red;
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+      </style>
+  </head>
+  <body>
+    
+<div class="context">
+<h1>ML project</h1>
+<div class="container">
+          <h1>Enter Lead Details</h1>
+          <h2> Prediction:</h2>
+    <form method="POST" action="/predict">
+        
+      <div class="column"><label for='Lead_Origin'>Lead Origin:</label>
+      <select id='Lead_Origin' name='Lead_Origin'>
+      <option value='0'>API</option>
+      <option value='1'>Landing Page Submission</option>
+      <option value='2'>Lead Add Form</option>
+      <option value='3'>Lead Import</option>
+      <option value='4'>Quick Add Form</option>
+      </select></div>
+      <div class="column"><label for='Lead_Source'>Lead Source:</label>
+      <select id='Lead_Source' name='Lead_Source'>
+          <option value='21'> </option>
+      <option value='0'>Click2call</option>
+      <option value='1'>Direct Traffic</option>
+      <option value='2'>Facebook</option>
+      <option value='3'>Google</option>
+      <option value='4'>Live Chat</option>
+      <option value='5'>NC_EDM</option>
+      <option value='6'>Olark Chat</option>
+      <option value='7'>Organic Search</option>
+      <option value='8'>Pay per Click Ads</option>
+      <option value='9'>Press_Release</option>
+      <option value='10'>Reference</option>
+      <option value='11'>Referral Sites</option>
+      <option value='12'>Social Media</option>
+      <option value='13'>WeLearn</option>
+      <option value='14'>Welingak Website</option>
+      <option value='15'>bing</option>
+      <option value='16'>blog</option>
+      <option value='17'>google</option>
+      <option value='18'>testone</option>
+      <option value='19'>welearnblog_Home</option>
+      <option value='20'>youtubechannel</option>
+      </select></div>
+      <div class="column"><label for='Do_Not_Call'>Do Not Call:</label>
+      <select id='Do_Not_Call' name='Do_Not_Call'>
+      <option value='0'>No</option>
+      <option value='1'>Yes</option>
+      </select></div>
+      <div class="column"><label for='Last_Activity'>Last Activity:</label>
+      <select id='Last_Activity' name='Last_Activity'>
+          <option value='17'> </option>
+      <option value='0'>Approached upfront</option>
+      <option value='1'>Converted to Lead</option>
+      <option value='2'>Email Bounced</option>
+      <option value='3'>Email Link Clicked</option>
+      <option value='4'>Email Marked Spam</option>
+      <option value='5'>Email Opened</option>
+      <option value='6'>Email Received</option>
+      <option value='7'>Form Submitted on Website</option>
+      <option value='8'>Had a Phone Conversation</option>
+      <option value='9'>Olark Chat Conversation</option>
+      <option value='10'>Page Visited on Website</option>
+      <option value='11'>Resubscribed to emails</option>
+      <option value='12'>SMS Sent</option>
+      <option value='13'>Unreachable</option>
+      <option value='14'>Unsubscribed</option>
+      <option value='15'>View in browser link Clicked</option>
+      <option value='16'>Visited Booth in Tradeshow</option>
+    </select></div>
+    <div class="column"><label for='Country'>Country:</label>
+    <select id='Country' name='Country'>
+          <option value='38'> </option>
+      <option value='0'>Asia/Pacific Region</option>
+      <option value='1'>Australia</option>
+      <option value='2'>Bahrain</option>
+      <option value='3'>Bangladesh</option>
+      <option value='4'>Belgium</option>
+      <option value='5'>Canada</option>
+      <option value='6'>China</option>
+      <option value='7'>Denmark</option>
+      <option value='8'>France</option>
+      <option value='9'>Germany</option>
+      <option value='10'>Ghana</option>
+      <option value='11'>Hong Kong</option>
+      <option value='12'>India</option>
+      <option value='13'>Indonesia</option>
+      <option value='14'>Italy</option>
+      <option value='15'>Kenya</option>
+      <option value='16'>Kuwait</option>
+      <option value='17'>Liberia</option>
+      <option value='18'>Malaysia</option>
+      <option value='19'>Netherlands</option>
+      <option value='20'>Nigeria</option>
+      <option value='21'>Oman</option>
+      <option value='22'>Philippines</option>
+      <option value='23'>Qatar</option>
+      <option value='24'>Russia</option>
+      <option value='25'>Saudi Arabia</option>
+      <option value='26'>Singapore</option>
+      <option value='27'>South Africa</option>
+      <option value='28'>Sri Lanka</option>
+      <option value='29'>Sweden</option>
+      <option value='30'>Switzerland</option>
+      <option value='31'>Tanzania</option>
+      <option value='32'>Uganda</option>
+      <option value='33'>United Arab Emirates</option>
+      <option value='34'>United Kingdom</option>
+      <option value='35'>United States</option>
+      <option value='36'>Vietnam</option>
+      <option value='37'>unknown</option>
+      </select></div>
+      <div class="column"><label for='Specialization'>Specialization:</label>
+      <select id='Specialization' name='Specialization'>
+          <option value='18'> </option>
+      <option value='0'>Banking, Investment And Insurance</option>
+      <option value='1'>Business Administration</option>
+      <option value='2'>E-Business</option>
+      <option value='3'>E-COMMERCE</option>
+      <option value='4'>Finance Management</option>
+      <option value='5'>Healthcare Management</option>
+      <option value='6'>Hospitality Management</option>
+      <option value='7'>Human Resource Management</option>
+      <option value='8'>IT Projects Management</option>
+      <option value='9'>International Business</option>
+      <option value='10'>Marketing Management</option>
+      <option value='11'>Media and Advertising</option>
+      <option value='12'>Operations Management</option>
+      <option value='13'>Retail Management</option>
+      <option value='14'>Rural and Agribusiness</option>
+      <option value='15'>Services Excellence</option>
+      <option value='16'>Supply Chain Management</option>
+      <option value='17'>Travel and Tourism</option>
+      </select></div>
+      <div class="column"><label for='What_is_your_current_occupation'>What is your current occupation:</label>
+      <select id='What_is_your_current_occupation' name='What_is_your_current_occupation'>
+          <option value='6'> </option>
+      <option value='0'>Businessman</option>
+      <option value='1'>Housewife</option>
+      <option value='2'>Other</option>
+      <option value='3'>Student</option>
+      <option value='4'>Unemployed</option>
+      <option value='5'>Working Professional</option>
+      </select></div>
+      <div class="column"><label for='What_matters_most_to_you_in_choosing_a_course'>What matters most to you in choosing a course:</label>
+      <select id='What_matters_most_to_you_in_choosing_a_course' name='What_matters_most_to_you_in_choosing_a_course'>
+          <option value='3'> </option>
+      <option value='0'>Better Career Prospects</option>
+      <option value='1'>Flexibility & Convenience</option>
+      <option value='2'>Other</option>
+      </select></div>
+      <div class="column"><label for='Search'>Search:</label>
+      <select id='Search' name='Search'>
+      <option value='0'>No</option>
+      <option value='1'>Yes</option>
+      </select></div>
+      <div class="column"><label for='Newspaper_Article'>Newspaper Article:</label>
+      <select id='Newspaper_Article' name='Newspaper_Article'>
+      <option value='0'>No</option>
+      <option value='1'>Yes</option>
+      </select></div>
+      <div class="column"><label for='X_Education_Forums'>X Education Forums:</label>
+      <select id='X_Education_Forums' name='X_Education_Forums'>
+      <option value='0'>No</option>
+      <option value='1'>Yes</option>
+      </select></div>
+      <div class="column"><label for='Newspaper'>Newspaper:</label>
+      <select id='Newspaper' name='Newspaper'>
+      <option value='0'>No</option>
+      <option value='1'>Yes</option>
+      </select></div>
+      <div class="column"><label for='Digital_Advertisement'>Digital Advertisement:</label>
+      <select id='Digital_Advertisement' name='Digital_Advertisement'>
+      <option value='0'>No</option>
+      <option value='1'>Yes</option>
+      </select></div>
+      <div class="column"><label for='Through_Recommendations'>Through Recommendations:</label>
+      <select id='Through_Recommendations' name='Through_Recommendations'>
+      <option value='0'>No</option>
+      <option value='1'>Yes</option>
+      </select></div>
+      <div class="column"><label for='City'>City:</label>
+      <select id='City' name='City'>
+          <option value='6'> </option>
+      <option value='0'>Mumbai</option>
+      <option value='1'>Other Cities</option>
+      <option value='2'>Other Cities of Maharashtra</option>
+      <option value='3'>Other Metro Cities</option>
+      <option value='4'>Thane & Outskirts</option>
+      <option value='5'>Tier II Cities</option>
+      </select></div>
+      <div class="column"><label for='A_free_copy_of_Mastering_The_Interview'>A free copy of Mastering The Interview:</label>
+      <select id='A_free_copy_of_Mastering_The_Interview' name='A_free_copy_of_Mastering_The_Interview'>
+      <option value='0'>No</option>
+      <option value='1'>Yes</option>
+      </select></div>
+      <div class="col">
+      <button type="submit">Predict</button></div>
+    </form></div></div>
+
+</div >
+</body></html>
