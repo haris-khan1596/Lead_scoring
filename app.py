@@ -36,15 +36,19 @@ def predict():
     features = np.array([lead_origin, lead_source, do_not_call, last_activity, country,
                         specialization, current_occupation, course_preference, search,
                         newspaper_article, education_forums, newspaper, digital_advertisement,
-                        through_recommendations, city, mastering_interview])
+                        through_recommendations, city, mastering_interview,0,0,0,0])
 
     # Reshape the feature array to match the model's input shape
     features = features.reshape(1, -1)
 
     # Make the prediction using the model
     prediction = model.predict(features)
+    if prediction[0]==0:
+        prediction= "Not Converted"
+    else:
+        prediction= "Converted"
 
     # Return the predicted outcome
-    return f"The predicted outcome is: {prediction[0]}"
+    return f"The predicted outcome is: {prediction}"
 if __name__ == '__main__':
     app.run()
