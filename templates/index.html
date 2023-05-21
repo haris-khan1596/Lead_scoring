@@ -23,6 +23,12 @@
         color: #ff69b4;
         margin-top: 0;
       }
+      h2{
+        text-align: center;
+      }
+      h2:hover{
+        color: #ff69b4;
+      }
       
       form {
         margin-top: 20px;
@@ -48,7 +54,7 @@
         margin-bottom: 10px; /* Increase the margin for better spacing */
       }
       
-      input[type="text"],
+      input[type="number"],
       select {
         width: 100%;
         padding: 10px;
@@ -57,7 +63,7 @@
         margin-bottom: 10px;
         box-sizing: border-box; /* Include padding in the width calculation */
       }
-      
+      input[type="number"],
       select {
         appearance: none;
         -webkit-appearance: none;
@@ -97,7 +103,12 @@
 <h1>ML project</h1>
 <div class="container">
           <h1>Enter Lead Details</h1>
-          <h2> Prediction:</h2>
+          
+  
+          <h2 >Prediction Result: {{
+            prediction
+          }}</h2>
+
     <form method="POST" action="/predict">
         
       <div class="column"><label for='Lead_Origin'>Lead Origin:</label>
@@ -133,11 +144,28 @@
       <option value='19'>welearnblog_Home</option>
       <option value='20'>youtubechannel</option>
       </select></div>
+      <div class="column"><label for='Do_Not_Email'>Do Not Email:</label>
+        <select id='Do_Not_Email' name='Do_Not_Email'>
+        <option value='0'>No</option>
+        <option value='1'>Yes</option>
+        </select></div>
       <div class="column"><label for='Do_Not_Call'>Do Not Call:</label>
       <select id='Do_Not_Call' name='Do_Not_Call'>
       <option value='0'>No</option>
       <option value='1'>Yes</option>
       </select></div>
+      <div class="column"><label for='total_visits'>Total Visits:</label>
+        <input type="number" name="total_visits" id="total_visits" min="0" max="10" required/>
+      </div>
+<!-- Adding rows -->
+      <div class="column"><label for='time_spent'>Total Time Spent on Website:</label>
+        <input type="number" name="time_spent" id="time_spent" min="0" max="2272" required/>
+      </div>
+
+      <div class="column"><label for='page_views'>Page Views Per Visit:</label>
+        <input type="number" name="page_views" id="page_views" min="0" max="6" required/>
+      </div>
+      <!-- ending rows -->
       <div class="column"><label for='Last_Activity'>Last Activity:</label>
       <select id='Last_Activity' name='Last_Activity'>
           <option value='17'> </option>
@@ -287,7 +315,8 @@
       </select></div>
       <div class="col">
       <button type="submit">Predict</button></div>
-    </form></div></div>
+    </form></div>
+  </div>
 
 </div >
 </body></html>
